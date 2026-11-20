@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Список постов — Мой блог{% endblock %}
+
+{% block content %}
+    <h1>Свежие записи</h1>
+    
+    {% for post in posts %}
+        <article>
+            <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+            <small>Опубликовано: {{ post.created_at|date:"d.m.Y H:i" }}</small>
+            <p>{{ post.content|truncatewords:30 }}</p>
+        </article>
+    {% empty %}
+        <p>Пока нет ни одного поста. Добавьте их через админ-панель.</p>
+    {% endfor %}
+{% endblock %}
