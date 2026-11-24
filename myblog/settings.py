@@ -54,7 +54,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'blog.urls'
+ROOT_URLCONF = 'myblog.urls'
 
 TEMPLATES = [
     {
@@ -71,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'blog.wsgi.application'
+WSGI_APPLICATION = 'myblog.wsgi.application'
 
 
 # Database
@@ -81,7 +81,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.getenv('NAME'),
-        'ROLE': os.getenv('ROLE'),
+        'USR': os.getenv('USR'),
         'PASSWORD': os.getenv('PASSWORD'),
         'HOST': os.getenv('HOST'),
         'PORT': os.getenv('PORT'),
