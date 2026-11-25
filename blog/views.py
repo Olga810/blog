@@ -14,3 +14,7 @@ def post_list(request):
 def post_detail(request, slug):
     post = get_object_or_404(Post, slug=slug)
     return render(request, 'blog/post_detail.html', {'post': post})
+
+def old_post_redirect(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+    return redirect(post, permanent=True) 
